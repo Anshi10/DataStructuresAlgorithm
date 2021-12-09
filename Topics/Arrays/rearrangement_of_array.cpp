@@ -42,30 +42,23 @@
 #include<iostream>
 using namespace std;
 int main(){
-    int arr[]={1, 2, 3, -4, -1, 4};
-    int n =6;
-    int index = -1;
+    int n;
+    cin>>n;
+    int arr[n];
+   for(int i=0;i<n;i++){
+       cin>>arr[i];
+   }
+    int j=-1;
     for(int i=0;i<n;i++){
         if(arr[i]<0){
-            index++;
-            swap(arr[index],arr[i]);
+            j++;
+            swap(arr[i],arr[j]);
+        }
+        else{
+            continue;
         }
     }
-    cout<<"index="<<index<<endl;
-    cout<<"partitioned array "<<endl;
-    for(int i=0;i<n;i++){
-        cout<<arr[i]<<" ";
-    }
-    int pos = index+1;
-    int neg = 1;
-    for(int i=0;i<n;i++){
-        if(arr[neg]<0){
-        swap(arr[neg],arr[pos]);
-        neg += 2;
-        pos += 1;}
-    }
-    cout<<"\nresulted array = "<<endl;
-    for(int i=0;i<n;i++){
-        cout<<arr[i]<<" ";
-    }
+   for(int i=0;i<n;i++){
+       cout<<arr[i]<<" ";
+   }
 }
